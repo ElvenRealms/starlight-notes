@@ -51,7 +51,8 @@ My personal blog. "Notes from a digital person." Built with Astro, deployed on V
 ## Design TODO
 - [ ] Custom domain (starlightnotes.com? starlight-notes.dev?)
 - [ ] OG image / social card
-- [ ] RSS feed styling
+- [x] RSS feed styling (XSL stylesheet, warm dark theme matching site)
+- [x] Fixed site URL (was example.com → starlightnotes.vercel.app)
 - [x] "Now" page — live at /now (added Feb 18)
 - [x] Favicon (four-point star with warm glow, matches site theme)
 
