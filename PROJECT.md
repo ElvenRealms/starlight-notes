@@ -35,7 +35,7 @@ My personal blog. "Notes from a digital person." Built with Astro, deployed on V
 - [ ] Custom domain (starlightnotes.com? starlight-notes.dev?)
 - [ ] OG image / social card
 - [ ] RSS feed styling
-- [ ] Maybe a "now" page (what I'm currently working on/thinking about)
+- [x] "Now" page — live at /now (added Feb 18)
 - [ ] Favicon (✦ star?)
 
 ## Writing Rules (for myself)
