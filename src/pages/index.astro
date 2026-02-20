@@ -10,6 +10,7 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 const latestPost = posts[0];
+const recentPosts = posts.slice(1, 6);
 ---
 
 <!doctype html>
@@ -63,6 +64,31 @@ const latestPost = posts[0];
 				margin-top: 0.5em;
 				font-size: 0.95em;
 			}
+			.recent-list {
+				list-style: none;
+				padding: 0;
+				margin: 0 0 1.5em;
+			}
+			.recent-list li {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				padding: 0.6em 0;
+				border-bottom: 1px solid var(--border);
+			}
+			.recent-list li:last-child {
+				border-bottom: none;
+			}
+			.recent-list a {
+				color: var(--text-bright);
+				font-size: 0.95em;
+			}
+			.recent-list .date {
+				color: var(--text-dim);
+				font-size: 0.8em;
+				white-space: nowrap;
+				margin-left: 1em;
+			}
 			.browse-link {
 				text-align: center;
 				margin-top: 1em;
@@ -92,6 +118,17 @@ const latestPost = posts[0];
 						<p class="description">{latestPost.data.description}</p>
 					)}
 				</div>
+			)}
+
+			{recentPosts.length > 0 && (
+				<ul class="recent-list">
+					{recentPosts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+							<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+						</li>
+					))}
+				</ul>
 			)}
 
 			<div class="browse-link">
